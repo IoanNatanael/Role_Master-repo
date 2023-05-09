@@ -1,1 +1,1 @@
-web: gunicorn Role_Master.wsgi 
+web: gunicorn Role_Master.wsgi
