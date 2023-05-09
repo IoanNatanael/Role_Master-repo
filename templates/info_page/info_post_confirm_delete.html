@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% if user.is_superuser %}
+    {% block title %}Confirm Delete{% endblock %}
+
+    {% block content %}
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <h1 class="my-4 text-primary">Confirm Delete</h1>
+                    <p class="text-primary">Are you sure you want to delete the post "{{ info_post.title }}"?</p>
+                    <form method="post">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                        <a href="{% url 'info_post_list' %}" class="btn btn-secondary">Cancel</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    {% endblock %}
+{% endif %}

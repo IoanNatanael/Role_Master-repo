@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #147182">
+    <a class="navbar-brand" href="#">Role Master</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="{% url 'homepage' %}">Home</a>
+            {% if user.is_authenticated %}
+                <a class="nav-item nav-link" href="{% url 'info_page' %}">Info Page</a>
+            {% endif %}
+            {#            <a class="nav-item nav-link" href="{% url 'chat' %}">Chat</a>#}
+            {% if user.is_superuser %}
+                <div class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                       aria-expanded="false">
+                        Create Post
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="createDropdown">
+                        <a class="dropdown-item" href="{% url 'post_create' %}">Home Post</a>
+                        <a class="dropdown-item" href="{% url 'info_post_create' %}">Info Post</a>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    {% if user.is_authenticated %}
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                My profile, {{ user.username }}
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="{% url 'password_change' %}">Change password</a></li>
+                <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
+            </ul>
+        </div>
+    {% else %}
+        <div>
+            <a href="{% url 'login' %}" class="btn btn-outline-dark">Log in</a>
+            <a href="{% url 'create_user' %}" class="btn btn-outline-success">Sign up</a>
+        </div>
+    {% endif %}
+</nav>
+
+
