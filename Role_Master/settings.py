@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'home',
     'info_page',
     'userextend',
+    'crispy_forms',
+    'django_filters',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
