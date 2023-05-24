@@ -87,7 +87,7 @@ WSGI_APPLICATION = 'Role_Master.wsgi.application'
 # }
 
 DATABASES = {
-    'default': dj_database_url.config(default='postgres://localhost:5432/db_name')
+    'default': dj_database_url.config(conn_max_age=600, ssl_require=True)
 }
 
 # Password validation
