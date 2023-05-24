@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% if user.is_superuser %}
+    {% block title %}Edit Post{% endblock %}
+
+    {% block content %}
+        <h1 class="text-info">Edit Post</h1>
+        <form method="POST" class="bg-transparent">
+            {% csrf_token %}
+            <div class="form-group col-6">
+                <input type="text" class="form-control bg-transparent text-white" id="title-input" name="title"
+                       placeholder="Title" value="{{ form.title.value }}">
+            </div>
+            <div class="form-group col-6">
+                <textarea class="form-control bg-transparent text-white" id="content-input" name="content" rows="5"
+                          placeholder="Content">{{ form.content.value }}</textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+            <a href="{% url 'info_post_list' %}" class="btn btn-secondary">Cancel</a>
+        </form>
+    {% endblock %}
+{% endif %}
