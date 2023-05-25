@@ -87,7 +87,14 @@ WSGI_APPLICATION = 'Role_Master.wsgi.application'
 # }
 
 DATABASES = {
-    'default': dj_database_url.config(conn_max_age=600, ssl_require=True)
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'HOST': 'ble5mmo2o5v9oouq.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+        'PORT': '3306',
+        'NAME': 'ca7f6oqqbm593uj2',
+        'USER': 'm19sh3fbd0fcafdn',
+        'PASSWORD': 'pde7szq2z60m7pau',
+    }
 }
 
 # Password validation
