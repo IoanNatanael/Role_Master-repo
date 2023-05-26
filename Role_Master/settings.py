@@ -12,8 +12,6 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 import os
 from pathlib import Path
 from decouple import config
-from django.core.exceptions import ValidationError
-from django.utils.translation import gettext as _
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -99,21 +97,10 @@ DATABASES = {
     }
 }
 
-
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
 # settings.py
-
-def custom_password_validator(password):
-    if len(password) < 8:
-        raise ValidationError(_("Your password must be at least 8 characters long."))
-    if password.isnumeric():
-        raise ValidationError(_("Your password can't be entirely numeric."))
-    if not any(char.isdigit() for char in password):
-        raise ValidationError(_("Your password must contain at least one number."))
-    if not any(char.isalnum() for char in password):
-        raise ValidationError(_("Your password must contain at least one special character."))
 
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -133,7 +120,7 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
     {
-        'NAME': 'Role_Master.settings.custom_password_validator',  # Specify the path to your custom validator function
+        'NAME': 'Role_Master.validators.custom_password_validator',  # Specify the path to your custom validator function
     },
 ]
 
