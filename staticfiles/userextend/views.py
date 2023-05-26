@@ -20,7 +20,6 @@ class UserExtendCreateView(CreateView):
         if form.is_valid() and not form.errors:
             new_user = form.save(commit=True)
             new_user.is_active = True
-            new_user.username = f'{new_user.first_name} {new_user.last_name}'
             new_user.save()
             return redirect('login')
 

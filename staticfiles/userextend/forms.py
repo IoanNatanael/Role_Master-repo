@@ -43,9 +43,9 @@ class UserExtendForm(UserCreationForm):
         self.fields['password1'].widget.attrs.update({
             'class': 'form-control',
             'placeholder': 'Please enter your password',
-            'pattern': '^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$',
-            'title': 'Your password must be at least 8 characters long, contain at least one uppercase letter, '
-                     'one lowercase letter, one number and one special character.'
+            # 'pattern': '^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$',
+            # 'title': 'Your password must be at least 8 characters long, contain at least one uppercase letter, '
+            #          'one lowercase letter, one number and one special character.'
         })
         self.fields['password2'].widget.attrs.update({
             'class': 'form-control',
