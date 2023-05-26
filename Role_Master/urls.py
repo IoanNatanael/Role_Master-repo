@@ -28,6 +28,7 @@ urlpatterns = [
     path('', views.HomeTemplateView.as_view(), name='HomeTemplateView'),
     path('', include('userextend.urls')),
     path('', include('info_page.urls')),
+    path('tinymce/', include('tinymce.urls')),
     # path('', include('bot_invite.urls')),
 ]
 
