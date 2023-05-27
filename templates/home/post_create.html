@@ -1,19 +1,31 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% if user.is_superuser %}
     {% block title %}Create New Post{% endblock %}
+    {% block extra_head %}
+    <script src="{% static 'tinymce/tinymce.min.js' %}"></script>
+    <script>
+        tinymce.init({
+            selector: '.tinymce-editor',
+            plugins: 'autolink lists link',
+            toolbar: 'undo redo | bold italic | bullist numlist | link',
+        });
+    </script>
+{% endblock %}
 
     {% block content %}
         <h1 class="text-info">Create New Post</h1>
         <form method="POST" class="bg-transparent">
             {% csrf_token %}
             <div class="form-group col-6">
-                <input type="text" class="form-control bg-transparent text-white" id="title-input" name="title"
-                       placeholder="Title">
+                <label for="title-input"></label><input type="text" class="form-control bg-transparent text-white" id="title-input" name="title"
+                                                        placeholder="Title">
             </div>
             <div class="form-group col-6">
-                <textarea class="form-control bg-transparent text-white" id="content-input" name="content" rows="5"
-                          placeholder="Content"></textarea>
+                <label for="content-input"></label><textarea class="form-control bg-transparent text-white" id="content-input" name="content" rows="5"
+                                                             placeholder="Content"></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Save</button>
         </form>
