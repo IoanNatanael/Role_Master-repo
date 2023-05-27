@@ -26,11 +26,5 @@
                 </li>
             {% endfor %}
         </ul>
-        <form method="post">
-            {% csrf_token %}
-            {{ form.media }}
-            {{ form.content }}
-            <input type="submit" value="Submit">
-        </form>
     </div>
 {% endblock %}
