@@ -1,8 +1,6 @@
 .btn-multiline {
     max-width: 800px;
-    display: block;
-    overflow: visible;
+    overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    word-break: break-all;
 }
