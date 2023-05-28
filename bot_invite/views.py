@@ -16,4 +16,4 @@ def discord_link(request):
         # Copy button clicked, show success message
         messages.success(request, 'Link copied successfully!')
 
-    return render(request, 'discord_link.html', {'bot_link': bot_link})
+    return render(request, 'bot_invite/discord_link.html', {'bot_link': bot_link})
