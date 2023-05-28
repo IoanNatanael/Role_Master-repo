@@ -25,7 +25,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 # Load environment variables from .env file
 
-# ALLOWED_HOSTS = ['role-master-2.herokuapp.com']
+ALLOWED_HOSTS = ['role-master-2.herokuapp.com']
 
 # Application definition
 
@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'bot_invite',
     'tinymce'
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -83,7 +84,7 @@ WSGI_APPLICATION = 'Role_Master.wsgi.application'
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #     }
 # }
 
@@ -148,7 +149,6 @@ LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/login/'
 
-ALLOWED_HOSTS = ['role-master-2.herokuapp.com']
 
 # TINYMCE_DEFAULT_CONFIG = {
 #     'height': 400,
