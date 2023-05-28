@@ -150,16 +150,6 @@ LOGOUT_REDIRECT_URL = '/login/'
 
 ALLOWED_HOSTS = ['role-master-2.herokuapp.com']
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-
-# SMTP este - un protocol pentru trimiterea de mailuri (SIMPLE MAIL TRANSFER PROTOCOL)
-
-EMAIL_HOST = 'mail.horiascurtu.ro'
-EMAIL_HOST_USER = 'group_ro35@horiascurtu.ro'
-EMAIL_HOST_PASSWORD = 'Django1234!'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-
 # TINYMCE_DEFAULT_CONFIG = {
 #     'height': 400,
 #     'plugins': 'advlist autolink lists link image charmap print preview anchor',
