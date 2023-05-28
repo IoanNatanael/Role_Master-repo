@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Discord Bot Page</h1>
+    <p>Click the link below to invite the bot to your server:</p>
+    <a href="{{ bot_link }}" target="_blank">{{ bot_link }}</a>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Copy Link</button>
+    </form>
+{% endblock %}

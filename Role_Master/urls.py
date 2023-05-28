@@ -29,7 +29,7 @@ urlpatterns = [
     path('', include('userextend.urls')),
     path('', include('info_page.urls')),
     path('tinymce/', include('tinymce.urls')),
-    # path('', include('bot_invite.urls')),
+    path('', include('bot_invite.urls')),
 ]
 
 if settings.DEBUG:

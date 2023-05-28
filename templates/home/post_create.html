@@ -5,14 +5,14 @@
 {% if user.is_superuser %}
     {% block title %}Create New Post{% endblock %}
     {% block extra_head %}
-    <script src="{% static 'tinymce/tinymce.min.js' %}"></script>
-    <script>
-        tinymce.init({
-            selector: '.tinymce-editor',
-            plugins: 'autolink lists link',
-            toolbar: 'undo redo | bold italic | bullist numlist | link',
-        });
-    </script>
+{#    <script src="{% static 'tinymce/tinymce.min.js' %}"></script>#}
+{#    <script>#}
+{#        tinymce.init({#}
+{#            selector: '.tinymce-editor',#}
+{#            plugins: 'autolink lists link',#}
+{#            toolbar: 'undo redo | bold italic | bullist numlist | link',#}
+{#        });#}
+{#    </script>#}
 {% endblock %}
 
     {% block content %}

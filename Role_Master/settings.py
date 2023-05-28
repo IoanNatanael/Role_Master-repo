@@ -150,9 +150,9 @@ LOGOUT_REDIRECT_URL = '/login/'
 
 ALLOWED_HOSTS = ['role-master-2.herokuapp.com']
 
-TINYMCE_DEFAULT_CONFIG = {
-    'height': 400,
-    'plugins': 'advlist autolink lists link image charmap print preview anchor',
-    'toolbar': 'undo redo | styleselect | bold italic | alignleft aligncenter alignright | bullist numlist outdent indent | link image',
-    'toolbar_mode': 'floating',
-}
+# TINYMCE_DEFAULT_CONFIG = {
+#     'height': 400,
+#     'plugins': 'advlist autolink lists link image charmap print preview anchor',
+#     'toolbar': 'undo redo | styleselect | bold italic | alignleft aligncenter alignright | bullist numlist outdent indent | link image',
+#     'toolbar_mode': 'floating',
+# }
