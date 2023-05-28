@@ -5,11 +5,11 @@
         <h1 class="mt-4 text-primary">Discord Bot Page</h1>
         <p class="text-primary">Click the link below to invite the bot to your server:</p>
         <div class="mb-3">
-            <a href="{{ bot_link }}" target="_blank" class="btn btn-primary btn-sm btn-transparent">{{ bot_link }}</a>
+            <a href="{{ bot_link }}" target="_blank" class="btn btn-primary btn-sm btn-transparent text-truncate">{{ bot_link }}</a>
         </div>
         <form id="copy-form">
             {% csrf_token %}
-            <label for="link-input"></label><input type="text" id="link-input" value="{{ discord_link }}" readonly>
+            <input type="text" id="link-input" value="{{ discord_link }}" readonly>
             <button type="button" class="btn btn-secondary" onclick="copyLink()">Copy Link</button>
         </form>
     </div>
