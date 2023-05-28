@@ -9,17 +9,19 @@
         </div>
         <form id="copy-form">
             {% csrf_token %}
-            <input type="hidden" id="link-input" value="{{ discord_link }}" readonly>
             <button type="button" class="btn btn-secondary" onclick="copyLink()">Copy Link</button>
         </form>
     </div>
 
     <script>
         function copyLink() {
-            const linkInput = document.getElementById('link-input');
+            const linkInput = document.createElement('input');
+            linkInput.value = '{{ bot_link }}';
+            document.body.appendChild(linkInput);
             linkInput.select();
             linkInput.setSelectionRange(0, 99999);
             document.execCommand('copy');
+            document.body.removeChild(linkInput);
             alert('Link copied!');
         }
     </script>
