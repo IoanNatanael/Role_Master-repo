@@ -24,7 +24,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 DEBUG = True
 # Load environment variables from .env file
-
+#
 ALLOWED_HOSTS = ['role-master-2.herokuapp.com']
 
 # Application definition
